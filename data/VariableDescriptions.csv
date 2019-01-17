@@ -1,0 +1,140 @@
+Data Element;Description;type
+ylp_count;Yelp ratings count;int
+ylp_tot;Yelp ratings count * rating;int
+ylp_avg;Yelp average rating;real
+ylp_diff;Yelp count difference last year;int
+pct_ylp_count;Yelp count percent of population;int
+taxi;Taxi trips;int
+taxi_share;Taxi trips share of evening;pct
+pct_taxi;Taxi as percent of population;pct
+t10sub07d;Subway stations density per sq km (z-scored);real
+t10subctdo;Number of subway stations;int
+tt15;Population travel time to work 15 mins;int
+tt30;Population travel time to work 30 mins;int
+tt45;Population Travel time to work 45 mins;int
+tt60;Population Travel time to work 60 mins;int
+tt90;Population travel time to work 90 mins;int
+pct_tt15;Percent of Population Travel time to work 15 mins;pct
+pct_tt30;Percent of Population Travel time to work 30 mins;pct
+pct_tt45;Percent of Population Travel time to work 45 mins;pct
+pct_tt60;Percent of Population Travel time to work 60 mins;pct
+pct_tt90;Percent of Population Travel time to work 90 mins;pct
+trees;Number of trees;int
+pct_trees;Number of trees as percent of population;pct
+t10treepc;Percent of census tract covered by tree canopy;pct
+pct_crime;Crime complaints as percent of population;pct
+crime;Number of crime complaints;int
+t10walk;BEH Walkability Score;int
+t10walkc;BEH Walkability Score Quintiles;int
+MHV;Median home value;currency
+MHV_log;Log of median home value;real
+hpi_change;Change in Home Price Index;pct
+HPI;Home Price Index;int
+no_mort;Number of household no mortgage;int
+pct_no_mort;Percent of households no mrtgage;pct
+med_rent;Median rent;currency
+myb;Median year built;year
+occupied;Number of vacant households;int
+pct_occup;Percent of households vacant;pct
+renter;Number of renters;int
+pct_renter;Percent of households that are renters;pct
+total_u;Number of housing structures;int
+u_detach;Number of 1 unit detached;int
+u_attach;Number of 1 unit attached units;int
+u2;Number of structures with 2 units;int
+u34;Number of structures with 3-4 units;int
+u59;Number of structures with 5-9 units;int
+u1019;Number of structures with 10-19 units;int
+u2049;Number of structures with 20-49 units;int
+u50;Number of structures with 50+ units;int
+pct_u_detach;Percent structures 1 unit detached;pct
+pct_u_attach;Percent structures 1 unit attached;pct
+pct_u2;Percent structures with 2 units;pct
+pct_u34;Percent structures with 3-4 units;pct
+pct_u59;Percent structures with 5-9 units;pct
+pct_u1019;Percent structures with 10-19 units;pct
+pct_u2049;Percent structures with 20-49 units;pct
+pct_u50;Percent structures with 50 units;pct
+b9099;Number structures built 1990-1999;int
+b8089;Number structures built 1980-1989;int
+b7079;Number structures built 1970-1979;int
+b6069;Number structures built 1960-1969;int
+b5059;Number structures built 1950-1959;int
+b4049;Number structures built 1940-1949;int
+b39;Number structures built pre-1939;int
+b2010;Number structures built 2000-2010;int
+pct2010;Percent structures built 2000-2010;pct
+pct9099;Percent structures built 1990-1999;pct
+pct8089;Percent structures built 1980-1989;pct
+pct7079;Percent structures built 1970-1979;pct
+pct6069;Percent built structures 1960-1969;pct
+pct5059;Percent built structures 1950-1959;pct
+pct4049;Percent built structures 1940-1949;pct
+pct39;Percent structures built pre-1939;pct
+med_rooms;Median number of rooms;int
+units;Number of structures;int
+mhc;Median housing cost;currency
+MHI;Median household income;currency
+pct_e9;Percent education 0-9;pct
+pct_e912;Percent education 10-12;pct
+pct_hs;Percent high school education;pct
+pct_coll;Percent some college;pct
+pct_ass;Percent associates degree;pct
+pct_bat;Percent bachelor's degree;pct
+pct_grad;Percent graduate degree;pct
+pct_all_coll;Percent bachelor's or graduate degree;pct
+pct_p1;Percent 1 person household;pct
+pct_p2;Percent 2 person household;pct
+pct_p3;Percent 3 person household;pct
+pct_p4;Percent 4 person household;pct
+pct_family;Percent with family;pct
+pct_married;Percent married;pct
+pct_other_hht;Percent other household type;pct
+pct_fam_male;Percent family male head;pct
+pct_fam_fem;Percent family female heard;pct
+pct_non_fam;Percent non-family;pct
+pct_non_fam_alone;Percent non-family single head of household;pct
+pct_non_fam_na;Percent non-family other;pct
+pct_child;Percent with child in household;pct
+foreign;Number foreign born;int
+pct_foreign;Percent foreign born;pct
+med_tage;Median total age;int
+med_mage;Median male age;int
+med_fage;Median female age;int
+pop;Population;int
+pov;Number in poverty;int
+pct_pov;Percent in poverty;pct
+tot_empl;Number total employed;int
+empl_mgmt;Number in management occupations;int
+empl_svc;Number in service occupations;int
+empl_sls;Number in sales occupations;int
+empl_con;Number in construction occupations;int
+empl_trns;Number in transportation occupations;pct
+pct_e_mgmt;Percent in management occupations;pct
+pct_e_svc;Percent in service occupations;pct
+pct_e_sls;Percent in sales occupations;pct
+pct_e_con;Percent in construction occupations;pct
+pct_e_trn;Percent in transportation occupations;pct
+pct_work_yr;Percent in Percent in management occupations;pct
+pct_work_not;Percent in Percent in service occupations;pct
+white;Number white;int
+black;Number black;int
+indian;Number indian;int
+asian;Number asian;int
+pac;Number pac;int
+other;Number other;int
+multi;Number multi;int
+pct_white;Percent white;pct
+pct_black;Percent black;pct
+pct_indian;Percent indian;pct
+pct_asian;Percent asian;pct
+pct_pac;Percent pac;pct
+pct_other;Percent other;pct
+pct_multi;Percent multi;pct
+MHV_neigh;Median home value of neighborhood;currency
+MHV_diff;Difference in MHV of census tract and neighborhood;currency
+wiki;Number of wikipedia edits;int
+google;Number of google searches;int
+b_bronx;Bronx borough indicator;int
+b_brooklyn;Brooklyn borough indicator;int
+b_queens;Queens borough indicator;int
