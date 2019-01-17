@@ -1,0 +1,16 @@
+<div id="top-link-block" class="hidden">
+    <a href="#top" class="well well-sm" onclick="$('html,body').animate({scrollTop:330},'slow');return false;">
+        <i class="glyphicon glyphicon-chevron-up"></i> Back to top
+    </a>
+</div><!-- /top-link-block -->
+
+<script type="text/javascript">
+// Only enable if the document has a long scroll bar
+// Note the window height + offset
+if ( ($(window).height() + 100) < $(document).height() ) {
+  $('#top-link-block').removeClass('hidden').affix({
+      // how far to scroll down before link "slides" into view
+      offset: {top:1400}
+  });
+}
+</script>

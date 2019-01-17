@@ -1,0 +1,164 @@
+<script type="text/javascript">
+  jQuery(".fit-h1").fitText(1.2, { minFontSize: '32px', maxFontSize: '38px' });
+  jQuery(".fit-h2").fitText(1.2, { minFontSize: '18px', maxFontSize: '26px' });
+  jQuery(".fit-text").fitText(0.8, { minFontSize: '18px', maxFontSize: '24px' });
+</script>
+
+<!-- Carousel
+================================================== -->
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+  <li data-target="#myCarousel" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="item active">
+      <img src="images/bg1.jpg" alt="1">
+      <div class="container">
+        <div class="carousel-caption">
+          <h1 class="fit-head">Looking for a particular area?</h1>
+          <p class="fit-text">Use Intelligentsia&rsquo;s interactive map to identify pockets of opportunity.</p>
+          <p>
+            <a class="btn btn-lg btn-primary" onclick="$('li:eq(1) a').tab('show');" role="button">Get started now &raquo;</a>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="item">
+      <img src="images/bg2.jpg" alt="2">
+      <div class="container">
+  <div class="carousel-caption">
+    <h1 class="fit-head">Compare your investment options</h1>
+    <p class="fit-text">You have already identified a few locations and want to compare them?</p>
+    <a class="btn btn-lg btn-primary" onclick="$('li:eq(2) a').tab('show');" role="button">Get started now &raquo;</a>
+    <!-- <p>
+      <form>
+        <div class="form-group">
+          <input id="addr1" type="text" class="form-control" placeholder="Search now...">
+          <input id="addr2" type="text" class="form-control" placeholder="Search now...">
+        </div>
+      </form>
+    </p> -->
+  </div>
+      </div>
+    </div>
+    <div class="item">
+      <img src="images/bg4.jpg" alt="3">
+      <div class="container">
+        <div class="carousel-caption">
+          <h1 class="fit-head">Identify new opportunities</h1>
+          <p class="fit-text">You want to invest into real estate, but don&rsquo;t know where?</p>
+          <p>
+            <a class="btn btn-lg btn-primary" onclick="$('li:eq(1) a').tab('show');" role="button">Get started now &raquo;</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+  <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+</div>
+<!-- /.carousel -->
+
+<div class="container marketing">
+  <!-- Three columns of text below the carousel -->
+  <div class="row">
+  <div class="container">
+    <h1 class="text-center fit-h1" style="font-size: 4em; margin-bottom: 30px;">We got you covered!</h1>
+  </div>
+  </div>
+
+  <div class="row">
+  <div class="col-md-4">
+    <img src="images/novice-01.png" width="50%" alt="novice">
+    <h2>Novice<br>investors</h2>
+    <p>You are new to real estate investment or new to New York City? We are here to help you out!</p>
+    <a class="btn btn-primary" onclick="$('li:eq(1) a').tab('show');" role="button">View top neighborhoods &raquo;</a>
+  </div><!-- /.col-md-4 -->
+  <div class="col-md-4">
+    <img src="images/veteran-01.png" width="50%" alt="veteran">
+    <h2>Veteran investors</h2>
+    <p>You have invested your money into real estate before, but want to identify new opportunities?</p>
+    <a class="btn btn-primary" onclick="$('li:eq(1) a').tab('show');" role="button">View top neighborhoods &raquo;</a>
+  </div><!-- /.col-md-4 -->
+  <div class="col-md-4">
+    <img src="images/evaluator-01.png" width="50%" alt="evaluator">
+    <h2>Location Evaluators</h2>
+    <p>You have identified a few interesting investment opportunities and want to make your final decision?</p>
+    <a class="btn btn-primary" onclick="$('li:eq(3) a').tab('show');" role="button">Compare locations &raquo;</a>
+  </div><!-- /.col-md-4 -->
+  </div><!-- /.row -->
+
+
+  <!-- START THE FEATURETTES -->
+
+  <hr class="featurette-divider">
+
+  <div class="row featurette center-on-xs">
+  <div class="col-md-5 col-md-push-7">
+    <img class="featurette-image img-responsive" src="images/data.jpg" alt = "">
+  </div>
+  <div class="col-md-7 col-md-pull-5">
+    <h2 class="featurette-heading">Intelligentsia.<br><span class="text-muted">Data-driven real estate evaluation</span></h2>
+    <p class="lead">Vivamus velit magna, pellentesque et mattis sed, tincidunt at nibh. Aliquam tristique bibendum pulvinar. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. <a data-toggle="collapse" data-parent="#accordionOne" href="#collapseOne">Read more&hellip;</a></p>
+     <div class="panel-group transparent-panel-group" id="accordionOne">
+        <div class="panel panel-default">
+          <div id="collapseOne" class="panel-collapse collapse">
+            <div class="panel-body text-left">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a tortor vel ligula elementum dapibus et sit amet justo. Vivamus nibh purus, venenatis id auctor eu, varius eu nisi. Nunc nec egestas lacus. Aliquam faucibus velit et elementum pulvinar. Pellentesque tincidunt eros mi, quis molestie tortor pharetra tincidunt. Aliquam magna dui, posuere sit amet venenatis vel, interdum vel augue. Mauris egestas sapien orci, a viverra quam rhoncus et.</p>
+              <p>Integer ut laoreet justo. Quisque lacinia, quam at maximus dignissim, massa metus tempor lacus, et tristique ante massa et est. Morbi tempus ut sapien eu convallis. Praesent porttitor sagittis feugiat. Nulla tristique purus porttitor augue accumsan, sed imperdiet arcu eleifend. Donec dapibus nibh ut leo interdum, ac aliquet urna ultricies. Etiam augue nisl, tristique et ipsum vel, vestibulum feugiat velit. Aliquam.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+  </div>
+
+  <hr class="featurette-divider">
+
+  <div class="row featurette center-on-xs">
+  <div class="col-md-5">
+    <img class="featurette-image img-responsive" src="images/analysis.png" alt = "">
+  </div>
+  <div class="col-md-7">
+    <h2 class="featurette-heading">We <i class="fa fa-heart" style="color:#bf2604;"></i> Data.<br><span class="text-muted">We really, really do</span></h2>
+    <p class="lead">We analyzed billions of data points so you don&rsquo;t have to! <a data-toggle="collapse" data-parent="#accordionTwo" href="#collapseTwo">Read more&hellip;</a></p>
+     <div class="panel-group transparent-panel-group" id="accordionTwo">
+        <div class="panel panel-default">
+          <div id="collapseTwo" class="panel-collapse collapse">
+            <div class="panel-body text-left">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a tortor vel ligula elementum dapibus et sit amet justo. Vivamus nibh purus, venenatis id auctor eu, varius eu nisi. Nunc nec egestas lacus. Aliquam faucibus velit et elementum pulvinar. Pellentesque tincidunt eros mi, quis molestie tortor pharetra tincidunt. Aliquam magna dui, posuere sit amet venenatis vel, interdum vel augue. Mauris egestas sapien orci, a viverra quam rhoncus et.</p>
+              <p>Integer ut laoreet justo. Quisque lacinia, quam at maximus dignissim, massa metus tempor lacus, et tristique ante massa et est. Morbi tempus ut sapien eu convallis. Praesent porttitor sagittis feugiat. Nulla tristique purus porttitor augue accumsan, sed imperdiet arcu eleifend. Donec dapibus nibh ut leo interdum, ac aliquet urna ultricies. Etiam augue nisl, tristique et ipsum vel, vestibulum feugiat velit. Aliquam.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="featurette-divider">
+
+  <div class="row featurette center-on-xs">
+    <div class="col-md-5 col-md-push-7">
+      <img class="featurette-image img-responsive" src="images/group_photo.jpg" alt = "">
+    </div>
+    <div class="col-md-7 col-md-pull-5">
+      <h2 class="featurette-heading">Introducting Intelligentsia.<br><span class="text-muted">This is us!</span></h2>
+      <p class="lead">Vivamus velit magna, pellentesque et mattis sed, tincidunt at nibh. Aliquam tristique bibendum pulvinar. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. <a data-toggle="collapse" data-parent="#accordionThree" href="#collapseThree">Read more&hellip;</a></p>
+       <div class="panel-group transparent-panel-group" id="accordionThree">
+          <div class="panel panel-default">
+            <div id="collapseThree" class="panel-collapse collapse">
+              <div class="panel-body text-left">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a tortor vel ligula elementum dapibus et sit amet justo. Vivamus nibh purus, venenatis id auctor eu, varius eu nisi. Nunc nec egestas lacus. Aliquam faucibus velit et elementum pulvinar. Pellentesque tincidunt eros mi, quis molestie tortor pharetra tincidunt. Aliquam magna dui, posuere sit amet venenatis vel, interdum vel augue. Mauris egestas sapien orci, a viverra quam rhoncus et.</p>
+                <p>Integer ut laoreet justo. Quisque lacinia, quam at maximus dignissim, massa metus tempor lacus, et tristique ante massa et est. Morbi tempus ut sapien eu convallis. Praesent porttitor sagittis feugiat. Nulla tristique purus porttitor augue accumsan, sed imperdiet arcu eleifend. Donec dapibus nibh ut leo interdum, ac aliquet urna ultricies. Etiam augue nisl, tristique et ipsum vel, vestibulum feugiat velit. Aliquam.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+
+</div>
+<!-- /END THE FEATURETTES -->
