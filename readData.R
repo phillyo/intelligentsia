@@ -1,39 +1,41 @@
-#   ____________________________________________________________________________
-#   Shapes                                                                  ####
-
 library(rgdal)
 library(sp)
 library(dplyr)
 library(magrittr)
 
-CTshapes <- readOGR("data/cb_2013_36_ct_500k/cb_2013_36_tract_500k.shp", 
-                    layer = "cb_2013_36_tract_500k",
-                    stringsAsFactors = FALSE)
+#   ____________________________________________________________________________
+#   Shapes                                                                  ####
 
-CTshapes <- readOGR("data/NYCnoWater/NYCnoWater.shp", 
-                    layer = "NYCnoWater",
-                    stringsAsFactors = FALSE)
-
-hoods <- readOGR("data/NYCneighborhoods2/geo_export_be611e44-cf7b-4c1a-a82f-a5504df8d5d6.shp", 
-        stringsAsFactors = FALSE)
-
-zillowHoods <- readOGR("data/ZillowNeighborhoods-NY", 
-                 stringsAsFactors = FALSE)
-
-subwayLines <- readOGR("data/subwayStations/nyctsubwayroutes_20150914/nyctsubwayroutes_20150914.shp",
+suppressMessages({
+    CTshapes <- readOGR("data/cb_2013_36_ct_500k/cb_2013_36_tract_500k.shp", 
+                        layer = "cb_2013_36_tract_500k",
+                        stringsAsFactors = FALSE)
+    
+    CTshapes <- readOGR("data/NYCnoWater/NYCnoWater.shp", 
+                        layer = "NYCnoWater",
+                        stringsAsFactors = FALSE)
+    
+    hoods <- readOGR("data/NYCneighborhoods2/geo_export_be611e44-cf7b-4c1a-a82f-a5504df8d5d6.shp", 
+                     stringsAsFactors = FALSE)
+    
+    zillowHoods <- readOGR("data/ZillowNeighborhoods-NY", 
+                           stringsAsFactors = FALSE)
+    
+    subwayLines <- readOGR("data/subwayStations/nyctsubwayroutes_20150914/nyctsubwayroutes_20150914.shp",
+                           stringsAsFactors = FALSE)
+    
+    subwayStations <- readOGR("data/subwayStations/nyctsubwaystops_20150914_hudsyds/nyctsubwaystops_20150914_hudsyds.shp",
+                              stringsAsFactors = FALSE)
+    
+    proj4string(hoods) <- proj4string(CTshapes)
+    proj4string(subwayLines) <- proj4string(CTshapes)
+    proj4string(subwayStations) <- proj4string(CTshapes)
+    
+    schools <- readOGR("data/Public_School_Locations/Public_Schools_Points_2011-2012A.shp",
                        stringsAsFactors = FALSE)
-
-subwayStations <- readOGR("data/subwayStations/nyctsubwaystops_20150914_hudsyds/nyctsubwaystops_20150914_hudsyds.shp",
-                       stringsAsFactors = FALSE)
-
-proj4string(hoods) <- proj4string(CTshapes)
-proj4string(subwayLines) <- proj4string(CTshapes)
-proj4string(subwayStations) <- proj4string(CTshapes)
-
-schools <- readOGR("data/Public_School_Locations/Public_Schools_Points_2011-2012A.shp",
-                   stringsAsFactors = FALSE)
-
-schools <- spTransform(schools, CRS("+proj=longlat +datum=WGS84"))
+    
+    schools <- spTransform(schools, CRS("+proj=longlat +datum=WGS84"))
+})
 
 print("Shapefiles complete")
 
