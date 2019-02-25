@@ -88,6 +88,7 @@ shinyServer(function(input, output) {
             GeoDF$GEOID, round(GeoDF$bin_20*100),1) %>% lapply(htmltools::HTML)  
     })
     
+    # ---------------------------
     # create color scheme for map
     bins <- c(seq(0,1,.2))
     pal <- colorBin("YlOrRd", domain = rev(GeoDF$bin_20), bins = rev(bins))
@@ -147,6 +148,7 @@ shinyServer(function(input, output) {
         CT <- CTshapes[CTshapes$GEOID == CT,]
         CT <- gCentroid(CT)
         
+        # ------------------------------------------------
         # Set the projection of the SpatialPointsDataFrame
         # using the projection of the shapefile
         proj4string(CT) <- proj4string(hoods)
@@ -177,6 +179,7 @@ shinyServer(function(input, output) {
         
         ghtml <- read_html(g)
         
+        # -----------------------------------------------
         # get url to wikipedia article from google search
         w <- ghtml %>% html_node(xpath = "//h3[@class='r']/a") %>% 
             html_attr("href") %>%
@@ -327,7 +330,7 @@ shinyServer(function(input, output) {
                    legend = list(x = .5, y = -.1, xanchor = "center",
                                  orientation = "h"),
                    annotations = list(text = "Source: Yelp", align = "left",
-                                      x = 0, y = -.3, showarrow = FALSE,
+                                      x = 0, y = -.15, showarrow = FALSE,
                                       xref = "paper", yref = "paper"),
                    font = list(family = "'Raleway', sans-serif"),
                    margin = list(r = 40, b = 30, pad = 3),
