@@ -30,9 +30,7 @@ shinyUI(navbarPage("Intelligentsia",
                    # tab panel 1 - Home
                    tabPanel("Home",
                             includeHTML("home.html"),
-                            tags$script(src = "plugins/fittext_1.2/jquery.fittext.js"),
                             tags$script(src = "plugins/scripts.js"),
-                            tags$script(src = "plugins/fittext.js"),
                             tags$head(
                               tags$link(rel = "stylesheet", 
                                         type = "text/css", 
@@ -44,15 +42,13 @@ shinyUI(navbarPage("Intelligentsia",
                    # tab panel 2 - Neighborhood Browser
                    tabPanel("Neighborhood Browser",
                             neighborhoodDescription(),
-                            tags$script(src = "plugins/fittext.js"),
                             includeHTML("scrollToTop.html")
                    ),
                    
                    # ----------------------------------
                    # tab panel 3 - Location Comparison
                    tabPanel("Location Comparison",
-                            propertyComparison(),
-                            tags$script(src = "plugins/fittext.js")
+                            propertyComparison()
                    ),
                    
                    # ----------------------------------
@@ -64,8 +60,7 @@ shinyUI(navbarPage("Intelligentsia",
                                 tags$link(rel = "stylesheet", 
                                           type = "text/css", 
                                           href = "plugins/carousel.css"),
-                                tags$script(src = "plugins/holder.js"),
-                                tags$script(src = "plugins/fittext.js")
+                                tags$script(src = "plugins/holder.js")
                             ),
                             tags$style(type="text/css",
                                        ".shiny-output-error { visibility: hidden; }",
