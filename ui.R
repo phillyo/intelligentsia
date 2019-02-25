@@ -32,7 +32,12 @@ shinyUI(navbarPage("Intelligentsia",
                             includeHTML("home.html"),
                             tags$script(src = "plugins/fittext_1.2/jquery.fittext.js"),
                             tags$script(src = "plugins/scripts.js"),
-                            tags$script(src = "plugins/fittext.js")
+                            tags$script(src = "plugins/fittext.js"),
+                            tags$head(
+                              tags$link(rel = "stylesheet", 
+                                        type = "text/css", 
+                                        href = "plugins/font-awesome-4.7.0/css/font-awesome.min.css")
+                            )
                    ),
                    
                    # ----------------------------------
@@ -59,9 +64,6 @@ shinyUI(navbarPage("Intelligentsia",
                                 tags$link(rel = "stylesheet", 
                                           type = "text/css", 
                                           href = "plugins/carousel.css"),
-                                tags$link(rel = "stylesheet", 
-                                          type = "text/css", 
-                                          href = "plugins/font-awesome-4.3.0/css/font-awesome.css"),
                                 tags$script(src = "plugins/holder.js"),
                                 tags$script(src = "plugins/fittext.js")
                             ),

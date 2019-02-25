@@ -5,7 +5,7 @@ neighborhoodDescription <- function() {
     tagList(
         div(class = "container",
             h1("Neighborhood Browser", class = "title fit-h1"),
-            tags$script(src = "plugins/fittext.js"),
+            #tags$script(src = "plugins/fittext.js"),
             p("You are new to New York City or real estate investment? Use Intelligentsia's neighborhood browser to identify pockets of opportunity in the city."),
             p("Use the map to browse New York City's gentrifying census tracts. Click on any one of them to get more detailed information. Use the slider to show only the top k tracts."),
             fluidRow(
@@ -161,7 +161,7 @@ propertyComparison <- function() {
     tagList(
         div(class = "container",
             h1("Location Comparison", class = "title fit-h1"),
-            tags$script(src = "plugins/fittext.js"),
+            #tags$script(src = "plugins/fittext.js"),
             p("You have already identified two locations of interest, but cannt decide which one to invest in? Let us help make your final decision."),
             p("Enter the addresses of two properties below and click the button to compare the locations in terms of gentrification potential."),
             p("Click the button to compare two sample locations or enter search addresses of your own!"),
