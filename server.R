@@ -654,26 +654,20 @@ shinyServer(function(input, output) {
     # get details for address
     
     location <- function(addrSearch) {
-        g <- "https://maps.googleapis.com/maps/api/place/autocomplete/json?input="
         
         search <- gsub(" ", "+", addrSearch, fixed = T)
-        key <- paste0("&types=geocode&key=", googleKey)
-        q <- paste0(g, search, key)
-        print(paste0("Retrieving address from: ", q))
-        r <- fromJSON(q)
-        a <- r$predictions[[1]][1]
         
-        print(a)
-        
-        addr <- data.frame(Longitude = geocode(a, source = "dsk")[1,1],
-                           Latitude = geocode(a, source = "dsk")[1,2])
+        addr <- data.frame(
+            lon = geocode(search, source = "google")[1,1],
+            lat = geocode(search, source = "google")[1,2]
+            )
         
         print("Address coordinates")
         print(addr)
-        
+
         #  --------------------
         # create spatial object
-        coordinates(addr) <- ~ Longitude + Latitude
+        coordinates(addr) <- ~ lon + lat
         
         # ------------------------------------------------
         # Set the projection of the SpatialPointsDataFrame
@@ -684,8 +678,8 @@ shinyServer(function(input, output) {
         h <- over(addr, hoods)
         
         x <- data.frame(GEOID = as.numeric(o[1,"GEOID"]),
-                        lat = addr$Latitude,
-                        lon = addr$Longitude,
+                        lat = addr$lat,
+                        lon = addr$lon,
                         hood = h$ntaname,
                         stringsAsFactors = FALSE)
         
@@ -701,7 +695,7 @@ shinyServer(function(input, output) {
     # define map
     
     map <- function(addr) {
-        
+        # --------------------------------------
         # create bounding box for filtering data
         d <- .01
         bbox <- sapply(c(addr$lat,addr$lon), function(x) x + c(-1,1) * d)
