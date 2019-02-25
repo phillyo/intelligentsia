@@ -42,7 +42,6 @@ print("Shapefiles complete")
 vars <- read.csv2("data/VariableDescriptions.csv",
                   stringsAsFactors = FALSE)
 
-#pred <- read.csv("data/prediction2.csv")
 pred <- read.csv("data/Scored MARS.csv")
 pred %<>% mutate(rank = dense_rank(desc(bin_20)))
 
