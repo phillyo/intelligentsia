@@ -1,6 +1,5 @@
-######################################
-# neighborhood browser
-######################################
+#   ____________________________________________________________________________
+#   Neighborhood Browser                                                    ####
 
 neighborhoodDescription <- function() {
     tagList(
@@ -130,9 +129,9 @@ neighborhoodDescription <- function() {
     )
 }
 
-######################################
-# location comparison
-######################################
+
+#   ____________________________________________________________________________
+#   Location Comparison                                                     ####
 
 legend <- "<div class='legend-custom'>
                <div class='legend-group'>

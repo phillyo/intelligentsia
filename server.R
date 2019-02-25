@@ -1,6 +1,6 @@
 ##########
-# server #
-##########
+#   ____________________________________________________________________________
+#   Server                                                                  ####
 
 library(shiny)
 library(rgdal)
@@ -28,9 +28,12 @@ library(RColorBrewer)
 library(DT)
 library(shinyBS)
 
-#setwd("/Users/philipp/Google Drive/Capstone/App/shiny/intelligentsia")
+source(keyring.R)
 
-# variables for testing
+
+### . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ..
+### Variables for testing                                                   ####
+
 #CT <- 36047019500
 #CT <- 36061010200
 #input <- NULL
@@ -41,7 +44,9 @@ library(shinyBS)
 #addrSearch <- "120 Willoughby Ave, Brooklyn"
 
 
-# pretty-print function
+### . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ..
+### Pretty-print function                                                   ####
+
 format_metric <- function(x, type) {
     switch(type,
            currency = paste0("$", 
@@ -61,16 +66,13 @@ format_metric <- function(x, type) {
 
 shinyServer(function(input, output) {
     
-    ####################################################################
-    ################------------------------------------################
-    #                       neighborhood browser
-    ################------------------------------------################
-    ####################################################################
+
+##  ............................................................................
+##  Neighborhood browser                                                    ####
     
-    ######################################
-    # map plot
-    ######################################
-    
+##  ............................................................................
+##  Map chart                                                               ####
+
     GeoDFr <- reactive({
         GeoDF[GeoDF$rank <= input$topK,]
     })
@@ -117,10 +119,8 @@ shinyServer(function(input, output) {
                       position = "bottomright")
     })
     
-    ######################################
-    # observe click events in map and 
-    # get neighborhood details
-    ######################################
+    # --------------------------------------------------------
+    # observe click events in map and get neighborhood details
     
     geo <- eventReactive(input$map_shape_click, {
         shinyjs::show("reactiveOutput6")
@@ -157,14 +157,14 @@ shinyServer(function(input, output) {
         o
     })
     
-    #############################
+    # -----------------
     # neighborhood name
     output$hood <- renderText({
         hood <- addrHood()
         hood$ntaname
     })
     
-    #############################
+    # -----------------
     # neighborhood info
     output$hoodInfo <- renderUI({
         n <- addrHood()
@@ -203,7 +203,7 @@ shinyServer(function(input, output) {
             lapply(htmltools::HTML)
     })
     
-    #############################
+    # ------
     # zillow
     
     output$zillow1 <- renderPlotly({
@@ -235,7 +235,7 @@ shinyServer(function(input, output) {
             config(displayModeBar = FALSE)
     })
     
-    #############################
+    # --------------------
     # google search trends
     
     output$google <- renderPlotly({
@@ -267,7 +267,7 @@ shinyServer(function(input, output) {
             config(displayModeBar = FALSE)
     })
     
-    #############################
+    # ---------------
     # wikipedia edits
     
     output$wiki <- renderPlotly({
@@ -299,7 +299,7 @@ shinyServer(function(input, output) {
             config(displayModeBar = FALSE)
     })
     
-    #############################
+    # ----
     # yelp
     
     output$yelp <- renderPlotly({
@@ -337,7 +337,7 @@ shinyServer(function(input, output) {
             config(displayModeBar = FALSE)
     })
     
-    #############################
+    # -----------------
     # taxitrips
     
     output$taxi <- renderPlotly({
@@ -368,7 +368,7 @@ shinyServer(function(input, output) {
             config(displayModeBar = FALSE)
     })
     
-    #############################
+    # -----------------
     # donut chart
     
     output$donut <- renderPlotly({
@@ -477,7 +477,7 @@ shinyServer(function(input, output) {
         }
     })
     
-    ######################################
+    # --------------------------
     # get properties from zillow
     
     output$propertiesForSale <- renderUI({
@@ -486,6 +486,7 @@ shinyServer(function(input, output) {
         CT <- CTshapes[CTshapes$GEOID == CT,]
         CT <- gCentroid(CT)
         
+        # ------------------------------------------------
         # Set the projection of the SpatialPointsDataFrame
         # using the projection of the shapefile
         proj4string(CT) <- proj4string(zillowHoods)
@@ -559,15 +560,11 @@ shinyServer(function(input, output) {
         }
         })
     
-    ####################################################################
-    ################------------------------------------################
-    #                        location comparison
-    ################------------------------------------################
-    ####################################################################
+    ##  ............................................................................
+    ##  Location comparison                                                     ####
     
-    ######################################
-    # reactive values
-    ######################################
+    ##  ............................................................................
+    ##  Reactive values                                                         ####
     
     observeEvent(input$compare, {
         shinyjs::show("reactiveOutput7a")
@@ -624,12 +621,8 @@ shinyServer(function(input, output) {
         }
     })
     
-    ######################################
-    # define functions
-    ######################################
-    
-    #################
-    # zillow graph
+    # ------------
+    # zillow chart
     
     zillowSmall <- function(x) {
         p %>% 
@@ -655,14 +648,14 @@ shinyServer(function(input, output) {
             config(displayModeBar = FALSE)
     }
     
-    #################
+    # -----------------------
     # get details for address
     
     location <- function(addrSearch) {
         g <- "https://maps.googleapis.com/maps/api/place/autocomplete/json?input="
         
         search <- gsub(" ", "+", addrSearch, fixed = T)
-        key <- "&types=geocode&key=AIzaSyCh4AzBfyORUM-oJ2-0pEjaG-fZtj8q9cM"
+        key <- paste0("&types=geocode&key=", googleKey)
         q <- paste0(g, search, key)
         print(paste0("Retrieving address from: ", q))
         r <- fromJSON(q)
@@ -676,9 +669,11 @@ shinyServer(function(input, output) {
         print("Address coordinates")
         print(addr)
         
+        #  --------------------
         # create spatial object
         coordinates(addr) <- ~ Longitude + Latitude
         
+        # ------------------------------------------------
         # Set the projection of the SpatialPointsDataFrame
         # using the projection of the shapefile
         proj4string(addr) <- proj4string(CTshapes)
@@ -700,7 +695,7 @@ shinyServer(function(input, output) {
         x
     }
     
-    #################
+    # ------------
     # define map
     
     map <- function(addr) {
@@ -742,7 +737,7 @@ shinyServer(function(input, output) {
                 overlayGroups = c("Schools", "Subway", "Yelp"))
     }
     
-    #################
+    # ------------
     # define donut
     
     donut <- function(x) {
@@ -777,7 +772,7 @@ shinyServer(function(input, output) {
         })
     }
     
-    #################
+    # ------------
     # location 1
     
     location1 <- reactive({
@@ -820,7 +815,7 @@ shinyServer(function(input, output) {
         donut(x)
     })
     
-    #################
+    # ------------
     # location 2
     
     location2 <- reactive({
@@ -863,7 +858,7 @@ shinyServer(function(input, output) {
         donut(x)
     })
     
-    #################
+    # -------------
     # CT comparison
     
     output$CTcomparisonChart <- renderPlotly({

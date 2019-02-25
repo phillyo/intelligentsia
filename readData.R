@@ -1,8 +1,5 @@
-#setwd("/Users/philipp/Google Drive/NYU/capstone/App/shiny/intelligentsia")
-
-##########
-# shapes #
-##########
+#   ____________________________________________________________________________
+#   Shapes                                                                  ####
 
 library(rgdal)
 library(sp)
@@ -64,9 +61,9 @@ pred %<>%
 # join prediction data with shapefile
 GeoDF <- sp::merge(CTshapes, pred, by.x = "GEOID", by.y = "ct", all.x = FALSE)
 
-###########################
-# labels and IDs for maps #
-###########################
+
+#   ____________________________________________________________________________
+#   Labels and IDs for maps                                                 ####
 
 hoodIDs <- as.vector(hoods$ntacode)
 zillowHoodIDs <- as.vector(zillowHoods$REGIONID)
@@ -83,9 +80,9 @@ schoolNames <- sprintf(
     "<strong>%s</strong>",
     schools$SCHOOLNAME) %>% lapply(htmltools::HTML)
 
-##########
-# zillow #
-##########
+
+#   ____________________________________________________________________________
+#   Zillow                                                                  ####
 
 library(magrittr)
 library(padr)
@@ -98,9 +95,9 @@ p %<>% filter(year(date) <= 2016)
 
 print("Zillow data complete")
 
-##########
-## yelp ##
-##########
+
+#   ____________________________________________________________________________
+#   Yelp                                                                    ####
 
 library(stringr)
 
@@ -123,9 +120,9 @@ yelp$lon %<>% as.numeric()
 
 print("Yelp data complete")
 
-##########
-## taxi ##
-##########
+
+#   ____________________________________________________________________________
+#   NYC Taxicab                                                             ####
 
 taxi <- read.csv2("data/taxicab/taxiData.csv", stringsAsFactors = FALSE,
                   colClasses = c(NA, "Date", NA, NA, NA, "Date"))
@@ -134,9 +131,9 @@ taxi %<>% filter(year(date_month) <= 2016)
 
 print("Taxicab data complete")
 
-############
-## subway ##
-############
+
+#   ____________________________________________________________________________
+#   NYC Subway                                                              ####
 
 subway <- read.csv2("data/subwayStations/subwayStations.csv",
                     stringsAsFactors = FALSE)
@@ -150,9 +147,9 @@ names(subwayFlat)[2:3] <- c("lat", "lon")
 
 print("Subway data complete")
 
-############
-## google ##
-############
+
+#   ____________________________________________________________________________
+#   Google Trends                                                           ####
 
 g <- read.csv2("data/google/googleTrendsByCT.csv",
                stringsAsFactors = FALSE)
@@ -161,9 +158,8 @@ g %<>% filter(year > 2004 & year <= 2016)
 
 print("Google data complete")
 
-############
-## google ##
-############
+#   ____________________________________________________________________________
+#   Wikipedia edits                                                         ####
 
 w <- read.csv2("data/wikipedia/wikiEditsByCT.csv",
                stringsAsFactors = FALSE)
