@@ -1,6 +1,4 @@
 #   ____________________________________________________________________________
 #   Keyring                                                                 ####
 
-googleKey <- "AIzaSyCh4AzBfyORUM-oJ2-0pEjaG-fZtj8q9cM"
-
-register_google(key = googleKey)
+register_google(key = "AIzaSyBDChCVnrpDxAYV5OsXb6VhQhN2GBTVmKE")
