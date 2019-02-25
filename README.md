@@ -4,4 +4,7 @@
 
 The key for Google's Geocoding API is stored in a file keyring.R like so:
 
-`googleKey <- "your-API-key"`
+```{r eval = FALSE}
+googleKey <- "your-API-key"
+register_google(key = googleKey) #register for ggmap
+```
