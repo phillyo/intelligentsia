@@ -231,7 +231,7 @@ propertyComparison <- function() {
                        
                        hidden(div(id = "reactiveOutput8",
                                   hr(),
-                                  h4("Comparison of key demographics"),
+                                  h3("Comparison of key demographics"),
                                   plotlyOutput("CTcomparisonChart", height = "750px"))
                        ))
             ),
@@ -240,7 +240,7 @@ propertyComparison <- function() {
                        hidden(div(id = "reactiveOutput9", 
                                   style = "margin-top: 30px; font-size: 1.5em;",
                                   hr(),
-                                  h4("Values for key demographics and real estate metrics"),
+                                  h3("Values for key demographics and real estate metrics"),
                                   DT::dataTableOutput("CTcomparisonTable"))
                        ))
             )
