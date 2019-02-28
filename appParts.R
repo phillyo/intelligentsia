@@ -164,6 +164,7 @@ propertyComparison <- function() {
             p("You have already identified two locations of interest, but cannt decide which one to invest in? Let us help make your final decision."),
             p("Enter the addresses of two properties below and click the button to compare the locations in terms of gentrification potential."),
             p("Click the button to compare two sample locations or enter search addresses of your own!"),
+            p("Using the buttons above the map, you can also show the location of nearby schools, subway stations and places on Yelp"),
             fluidRow(
                 column(4,
                        div(class = "addrSearch",
@@ -230,6 +231,7 @@ propertyComparison <- function() {
                        
                        hidden(div(id = "reactiveOutput8",
                                   hr(),
+                                  h4("Comparison of key demographics"),
                                   plotlyOutput("CTcomparisonChart", height = "750px"))
                        ))
             ),
@@ -238,6 +240,7 @@ propertyComparison <- function() {
                        hidden(div(id = "reactiveOutput9", 
                                   style = "margin-top: 30px; font-size: 1.5em;",
                                   hr(),
+                                  h4("Values for key demographics and real estate metrics"),
                                   DT::dataTableOutput("CTcomparisonTable"))
                        ))
             )
