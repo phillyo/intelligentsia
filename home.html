@@ -96,13 +96,17 @@
   </div>
   <div class="col-md-7 col-md-pull-5">
     <h2 class="featurette-heading">Intelligentsia.<br><span class="text-muted">Data-driven real estate evaluation</span></h2>
-    <p class="lead">Vivamus velit magna, pellentesque et mattis sed, tincidunt at nibh. Aliquam tristique bibendum pulvinar. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. <a data-toggle="collapse" data-parent="#accordionOne" href="#collapseOne">Read more&hellip;</a></p>
+    <p class="lead">Many cities across the world are experiencing a phenomenom known as &ldquo;gentrification&rdquo;. From a sociological perspective, gentrification raises questions about the displacement
+and &ldquo;pricing out&rdquo; of native residents, however, for real estate investors, it would appear to be
+a ripe opportunity for profit. As it turns out, this phenomenon can also be witnessed by understanding neighborhood demographics and other factors for which data are abound. <a data-toggle="collapse" data-parent="#accordionOne" href="#collapseOne">Read more&hellip;</a></p>
      <div class="panel-group transparent-panel-group" id="accordionOne">
         <div class="panel panel-default">
           <div id="collapseOne" class="panel-collapse collapse">
             <div class="panel-body text-left">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a tortor vel ligula elementum dapibus et sit amet justo. Vivamus nibh purus, venenatis id auctor eu, varius eu nisi. Nunc nec egestas lacus. Aliquam faucibus velit et elementum pulvinar. Pellentesque tincidunt eros mi, quis molestie tortor pharetra tincidunt. Aliquam magna dui, posuere sit amet venenatis vel, interdum vel augue. Mauris egestas sapien orci, a viverra quam rhoncus et.</p>
-              <p>Integer ut laoreet justo. Quisque lacinia, quam at maximus dignissim, massa metus tempor lacus, et tristique ante massa et est. Morbi tempus ut sapien eu convallis. Praesent porttitor sagittis feugiat. Nulla tristique purus porttitor augue accumsan, sed imperdiet arcu eleifend. Donec dapibus nibh ut leo interdum, ac aliquet urna ultricies. Etiam augue nisl, tristique et ipsum vel, vestibulum feugiat velit. Aliquam.</p>
+              <blockquote class="blockquote">&ldquo;One by one, many of the working class quarters have been invaded by the middle class–upper and lower… Once this process of ‘gentrification’ starts in a district it goes on rapidly until all or most of the working class occupiers are displaced and the whole social character of the district is changed.&rdquo; (Glass, 1964)</blockquote>
+              <p>This change of social character is articulated more precisely in contemporary definitions of gentrification, which point to a spectrum of neighborhood changes including rising incomes (Kolko, 2007), increased renovations (Hammel and Wyly, 1996), higher education levels (Ley, 1986) and elevated housing prices (Freeman, 2005). Although definitions of gentrification vary in their exact specifications (Barton, 2014), the term is generally used to describe a core underlying pattern: the migration of wealthier residents and more upscale businesses into less-affluent urban areas. As a result of this movement, the fundamental complexion of the neighborhood is transformed: demographics shift, the physical of the area characteristics evolve, and most notably, housing prices rise (Maciag, 2015).</p>
+              <p>Varying degrees of this phenomenon have been observed in a number of cities across the U.S.: Portland, OR; Denver, CO; Charleston, SC and Austin, TX to name a few (Pan, 2017). New York City has also seen its share of gentrifying neighborhoods in the last decade: In the period 2011 to early 2017, nine NYC regions with a starting estimated price per square foot under $500 saw appreciation above 50% in a five year period.</p>
+              <p>From a sociological perspective, gentrification raises questions about the displacement and “pricing out” of native residents, however, for real estate investors, it would appear to be a ripe opportunity for profit. Anecdotal stories of owners receiving double or even triple the values of their original investment are common (Cardwell, 2011).</p>
             </div>
           </div>
         </div>
@@ -123,8 +127,22 @@
         <div class="panel panel-default">
           <div id="collapseTwo" class="panel-collapse collapse">
             <div class="panel-body text-left">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a tortor vel ligula elementum dapibus et sit amet justo. Vivamus nibh purus, venenatis id auctor eu, varius eu nisi. Nunc nec egestas lacus. Aliquam faucibus velit et elementum pulvinar. Pellentesque tincidunt eros mi, quis molestie tortor pharetra tincidunt. Aliquam magna dui, posuere sit amet venenatis vel, interdum vel augue. Mauris egestas sapien orci, a viverra quam rhoncus et.</p>
-              <p>Integer ut laoreet justo. Quisque lacinia, quam at maximus dignissim, massa metus tempor lacus, et tristique ante massa et est. Morbi tempus ut sapien eu convallis. Praesent porttitor sagittis feugiat. Nulla tristique purus porttitor augue accumsan, sed imperdiet arcu eleifend. Donec dapibus nibh ut leo interdum, ac aliquet urna ultricies. Etiam augue nisl, tristique et ipsum vel, vestibulum feugiat velit. Aliquam.</p>
+              <p>The objective of Intelligentsia is to provide residential real estate investors with a home value appreciation forecast for neighborhoods within New York City. Our solution ranks NYC census tracts by <em>likelihood of gentrification, defined as a 20%+ gain in median home value over a two (and three) year period</em>. The model is designed for use on census tracts with a <em>starting median home value less than or equal to $500,000</em>. These parameter values were selected to address both the shortfalls of existing real estate tools as well as to address the interests of our target audience:</p>
+              <ul>
+                <li><em>Census tracts</em> are small enough to distinguish distinctive area characteristics and are not addressed by existing forecasting solutions (such as Case-Shiller)</li>
+                <li><em>Median home value</em> data covered more census tracts than other measures (such as cost per square foot) and therefore open up more new investment opportunities</li>
+                <li>A <em>20%+ gain in median home value</em> represents the minimum return that must be attained to recoup transaction costs on a $500,000 investment</li>
+                <li>The <em>2- and 3-year forecast windows</em> were the shortest time period in which a viable number of census tracts saw 20%+ gain in median home value</li>
+              </ul>
+              <p>A plethora of data were acquired and analyzed to create the Intelligentsia model. Among those data sets are:</p>
+              <ul>
+                <li>Retail environment data: Yelp ratings</li>
+                <li>Transportation data: NYC TLC taxicab trips, NYC Subway network and stations, residents&rsquo; travel time to work</li>
+                <li>Quality of life: Number and location of trees (NYC Open Data), Crime complaints (NYPD)</li>
+                <li>Online data: Edits of Wikipedia neighborhood articles, Google Search Trends</li>
+                <li>Housing: Median home value, gross rent, year structure built (Zillow, ACS/Census)</li>
+                <li>Demographics: Median income, age, education, poverty, employment (ACS/Census)</li>
+              </ul>
             </div>
           </div>
         </div>
@@ -140,17 +158,7 @@
     </div>
     <div class="col-md-7 col-md-pull-5">
       <h2 class="featurette-heading">Introducting Intelligentsia.<br><span class="text-muted">This is us!</span></h2>
-      <p class="lead">Vivamus velit magna, pellentesque et mattis sed, tincidunt at nibh. Aliquam tristique bibendum pulvinar. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. <a data-toggle="collapse" data-parent="#accordionThree" href="#collapseThree">Read more&hellip;</a></p>
-       <div class="panel-group transparent-panel-group" id="accordionThree">
-          <div class="panel panel-default">
-            <div id="collapseThree" class="panel-collapse collapse">
-              <div class="panel-body text-left">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a tortor vel ligula elementum dapibus et sit amet justo. Vivamus nibh purus, venenatis id auctor eu, varius eu nisi. Nunc nec egestas lacus. Aliquam faucibus velit et elementum pulvinar. Pellentesque tincidunt eros mi, quis molestie tortor pharetra tincidunt. Aliquam magna dui, posuere sit amet venenatis vel, interdum vel augue. Mauris egestas sapien orci, a viverra quam rhoncus et.</p>
-                <p>Integer ut laoreet justo. Quisque lacinia, quam at maximus dignissim, massa metus tempor lacus, et tristique ante massa et est. Morbi tempus ut sapien eu convallis. Praesent porttitor sagittis feugiat. Nulla tristique purus porttitor augue accumsan, sed imperdiet arcu eleifend. Donec dapibus nibh ut leo interdum, ac aliquet urna ultricies. Etiam augue nisl, tristique et ipsum vel, vestibulum feugiat velit. Aliquam.</p>
-              </div>
-            </div>
-          </div>
-        </div>
+      <p class="lead">This website, the data and the gentrification model are the result of the capstone project of team &ldquo;Intelligentsia&rdquo;, Class of 2017 of the MSBA program at New York University Stern School of Business. <a href="about.html">Read more about us&hellip;</a></p>
     </div>
   </div>
 
