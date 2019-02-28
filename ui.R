@@ -21,10 +21,11 @@ source("readData.R")
 #FF5850 red
 #436983 hipster blue
 
-shinyUI(navbarPage("Intelligentsia",
+shinyUI(navbarPage(title = "Intelligentsia",
                    theme = "style/style.css",
                    footer = includeHTML("footer.html"),
-                   fluid = TRUE, collapsible = TRUE,
+                   fluid = TRUE, 
+                   collapsible = TRUE,
                    
                    # ----------------------------------
                    # tab panel 1 - Home
@@ -34,7 +35,10 @@ shinyUI(navbarPage("Intelligentsia",
                             tags$head(
                               tags$link(rel = "stylesheet", 
                                         type = "text/css", 
-                                        href = "plugins/font-awesome-4.7.0/css/font-awesome.min.css")
+                                        href = "plugins/font-awesome-4.7.0/css/font-awesome.min.css"),
+                              tags$link(rel = "icon", 
+                                        type = "image/png", 
+                                        href = "images/logo_icon.png")
                             )
                    ),
                    
