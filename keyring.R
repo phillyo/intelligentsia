@@ -1,4 +1,4 @@
 #   ____________________________________________________________________________
 #   Keyring                                                                 ####
 
-register_google(key = "AIzaSyBDChCVnrpDxAYV5OsXb6VhQhN2GBTVmKE")
+register_google(key = "AIzaSyBUXFNhD4c3NhHZ2nUzwxd1u4f6iFKs9J0")
